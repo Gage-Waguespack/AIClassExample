@@ -1,19 +1,22 @@
 #pragma once
 #include "SteeringBehaviour.h"
 
+class Actor;
+
 class SeekBehaviour : public SteeringBehaviour
 {
 public:
-	SeekBehaviour() { m_target = nullptr; }
-	SeekBehaviour(Agent* target) { m_target = target; }
+	SeekBehaviour();
+	SeekBehaviour(Actor* target, float seekForce = 1);
 
-	Agent* getTarget() { return m_target; }
-	void setTarget(Agent* target) { m_target = target; }
+	Actor* getTarget() { return m_target; }
+	void setTarget(Actor* target) { m_target = target; }
 
 	MathLibrary::Vector2 calculateForce(Agent* agent) override;
 	void update(Agent* agent, float deltatime) override;
 private:
 	//The agent the behaviour is seeking
-	Agent* m_target;
+	Actor* m_target;
+	float m_seekForce;
 };
 
