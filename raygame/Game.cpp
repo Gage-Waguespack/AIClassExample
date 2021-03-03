@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Agent.h"
 #include "SeekBehaviour.h"
+#include "FleeBehaviour.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -31,11 +32,12 @@ void Game::start()
 
 	//Initialize agents
 	Player* player = new Player(10, 10, 5, "Images/player.png", 1, 10);
-	Agent* enemy = new Agent(20, 20, 1, "Images/enemy.png", 10, 10);
+	Agent* enemy = new Agent(15, 15, 1, "Images/enemy.png", 1, 1);
 
 	//Create a new steering behaviour and add it to the enemy
 	SeekBehaviour* seek = new SeekBehaviour(player);
-	enemy->addBehaviour(seek);
+	FleeBehaviour* flee = new FleeBehaviour(player);
+	enemy->addBehaviour(flee);
 
 	//Initialize the scene
 	Scene* scene = new Scene();
