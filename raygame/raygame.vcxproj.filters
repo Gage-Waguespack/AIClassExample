@@ -56,7 +56,7 @@
     <ClCompile Include="FleeBehaviour.cpp">
       <Filter>AI\Source</Filter>
     </ClCompile>
-    <ClCompile Include="WonderBehaviour.cpp">
+    <ClCompile Include="WanderBehaviour.cpp">
       <Filter>AI\Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -94,10 +94,10 @@
     <ClInclude Include="Enemy.h">
       <Filter>AI\Header</Filter>
     </ClInclude>
-    <ClInclude Include="WonderBehaviour.h">
+    <ClInclude Include="FleeBehaviour.h">
       <Filter>AI\Header</Filter>
     </ClInclude>
-    <ClInclude Include="FleeBehaviour.h">
+    <ClInclude Include="WanderBehaviour.h">
       <Filter>AI\Header</Filter>
     </ClInclude>
   </ItemGroup>

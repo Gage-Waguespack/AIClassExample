@@ -1,6 +1,6 @@
 #pragma once
 #include "Behaviour.h"
-class WonderBehaviour : public Behaviour
+class WanderBehaviour : public Behaviour
 {
 
 };
