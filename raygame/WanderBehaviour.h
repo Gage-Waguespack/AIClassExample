@@ -5,6 +5,7 @@ class WanderBehaviour : public Behaviour
 {
 public:
 	WanderBehaviour();
+	WanderBehaviour(Agent* agent);
 	void setAngle();
 	void update(Agent* agent, float deltatime) override;
 private:
