@@ -5,6 +5,7 @@ WanderBehaviour::WanderBehaviour()
 {
 	//Calculate the circle center
 
+
 	//Calculate the displacement force
 
 
