@@ -68,3 +68,14 @@ void Agent::addBehaviour(Behaviour* behaviour)
 	if (behaviour)
 		m_behaviours.push_back(behaviour);
 }
+
+MathLibrary::Vector2 Agent::getForward()
+{
+	return MathLibrary::Vector2(m_globalTransform->m11, m_globalTransform->m21).getNormalized();
+}
+
+void Agent::setForward(MathLibrary::Vector2 value)
+{
+	MathLibrary::Vector2 lookPosition = getWorldPosition() + value.getNormalized();
+	lookAt(lookPosition);
+}

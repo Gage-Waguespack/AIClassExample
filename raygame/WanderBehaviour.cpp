@@ -1,5 +1,6 @@
 #include "WanderBehaviour.h"
 #include <vector>
+#include "Agent.h"
 
 WanderBehaviour::WanderBehaviour()
 {
@@ -7,22 +8,20 @@ WanderBehaviour::WanderBehaviour()
 
 WanderBehaviour::WanderBehaviour(Agent* agent)
 {
-	// I need to make a circle, then I need to offset the circle 
-	//and calculate the center. After that I have to pick a random 
-	//point, normalize it to the circles border and calculate the 
-	//displacement and with that displacement, return the wander
-	//force, and move to that random point and keep doing that 
-	//until the enemy stops wandering (whenevever that may be).
-	//Remember to obtain a randomized point and that the sum of 
-	//the circle center vector and displacement is the wander force.
+	//I need to first think of a radius to get the "circle" at 0,0 (world position).
+	//Then pick a number between 0 and the radius of the circle for the x and y 
+	//to create a vector and normalize it. After this I need to find a point (higher
+	//on the y axis) infront of the player and add the world positions of both circles
+	//together to get the vector we want to head to.
 
 	//Create circle
+	float x = 2;
+	float y = 2;
+	
+	//take the x and y and turn it into a vector
+	MathLibrary::Vector2 (x, y);
 
-
-	//offset circle
-
-
-	//Calculate the circle center
+	//Calculate the new circle center as it is in WorldPosition
 
 
 	//Calculate the displacement force
