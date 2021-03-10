@@ -41,6 +41,7 @@ void Game::start()
 	WanderBehaviour* wander = new WanderBehaviour(player);
 	SeekBehaviour* seek = new SeekBehaviour(player);
 	FleeBehaviour* flee = new FleeBehaviour(player);
+
 	enemy->addBehaviour(wander);
 	enemy->addBehaviour(flee);
 

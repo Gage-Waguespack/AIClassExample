@@ -72,7 +72,6 @@ void SimpleEnemy::update(float deltaTime)
 	else if (checkTargetInSight())
 		x = 2;
 
-	//FIX SYNTAX (It's obviously wrong)
 	switch (x)
 	{
 		//default to wander
