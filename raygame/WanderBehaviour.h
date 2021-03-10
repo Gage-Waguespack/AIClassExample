@@ -1,12 +1,14 @@
 #pragma once
-#include "Behaviour.h"
+#include "SteeringBehaviour.h"
 #include <Vector2.h>
-class WanderBehaviour : public Behaviour
+
+class WanderBehaviour : public SteeringBehaviour
 {
 public:
 	WanderBehaviour();
 	WanderBehaviour(Agent* agent);
 	void setAngle();
+	MathLibrary::Vector2 calculateForce(Agent* agent) override;
 	void update(Agent* agent, float deltatime) override;
 private:
 	Agent* m_target;
