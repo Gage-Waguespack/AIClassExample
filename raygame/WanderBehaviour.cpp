@@ -15,14 +15,14 @@ WanderBehaviour::WanderBehaviour(Agent* agent)
 	//together to get the vector we want to head to.
 
 	//Create circle
-	float x = 2;
-	float y = 2;
+	agent->getWorldPosition() + MathLibrary::Vector2(1, 1);
 	
 	//take the x and y and turn it into a vector
-	MathLibrary::Vector2 (x, y);
+	MathLibrary::Vector2 randPoint = MathLibrary::Vector2 (cos((double)rand()), sin((double)rand()));
 
 	//Calculate the new circle center as it is in WorldPosition
-
+	
+	//I want to seek the randPoint next BEFORE ANYTHING ELSE
 
 	//Calculate the displacement force
 
@@ -38,6 +38,11 @@ WanderBehaviour::WanderBehaviour(Agent* agent)
 	//Finally calculate and return the wander force
 
 }
+
+//forward * preferred distance
+//add player worldPosition to worldposition then multiply be previous one
+//just get the circles position relative to the player and add that to the players worldPosition
+//This is how you get the circle displace from the player
 
 void WanderBehaviour::setAngle()
 {
