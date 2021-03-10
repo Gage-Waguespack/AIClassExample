@@ -64,21 +64,21 @@ void SimpleEnemy::update(float deltaTime)
 	//You can set the wander force to be whatever value you see fit but be sure to 
 	//set the seek force to be 0.
 	
-	int x = 1;
+	int x = WANDER;
 
 	if (!checkTargetInSight())
-		x = 1;
+		x = WANDER;
 
 	else if (checkTargetInSight())
-		x = 2;
+		x = SEEK;
 
 	switch (x)
 	{
 		//default to wander
-	case 1: addBehaviour(m_wander);
+	case WANDER: addBehaviour(m_wander);
 
 		//If the target is in sight, seek.
-	case 2: addBehaviour(m_seek);
+	case SEEK: addBehaviour(m_seek);
 	}
 
 	//The switch should transition to the seek state if the target is in sight.
