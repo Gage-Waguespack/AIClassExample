@@ -5,26 +5,37 @@
 bool SimpleEnemy::checkTargetInSight()
 {
 	//Check if the target is null. If so, return false
+	if (!getTarget())
+		return false;
 
 	//Find the direction vector that represent where the target is relative to the enemy
+	MathLibrary::Vector2 direction = getTarget()->getWorldPosition() - getWorldPosition();
 
 	//Find the dot product of the enemy's forward and the direction vector
+	MathLibrary::Vector2::dotProduct(getTarget()->getForward(), direction);
 
 	//Find the angle using the dot product
+	float angle = (float)MathLibrary::Vector2::findAngle(getTarget()->getForward(), direction);
 
 	//Check if that angle is greater than the enemy's viewing angle(any value you see fit is fine)
+	if (angle > 2)
+		//Return if the enemy saw the target (true if enemy sees player)
+		return true;
 
-	//Return if the enemy saw the target (true if enemy sees player, otherwise false)
+	//otherwise return false
 	return false;
 }
 
 void SimpleEnemy::onCollision(Actor* other)
 {
 	//Check to see if the enemy ran into the player
+    
 
 	//If the enemy has run into the player, deal damage to the player
 
+
 	//If the player health is less than 0, set the target to be nullptr
+
 }
 
 void SimpleEnemy::start()

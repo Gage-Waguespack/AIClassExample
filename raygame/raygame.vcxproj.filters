@@ -59,10 +59,10 @@
     <ClCompile Include="WanderBehaviour.cpp">
       <Filter>AI\Source</Filter>
     </ClCompile>
-    <ClCompile Include="SimpleEnemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Character.cpp">
+      <Filter>AI\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleEnemy.cpp">
       <Filter>AI\Source</Filter>
     </ClCompile>
   </ItemGroup>
@@ -106,10 +106,10 @@
     <ClInclude Include="WanderBehaviour.h">
       <Filter>AI\Header</Filter>
     </ClInclude>
-    <ClInclude Include="SimpleEnemy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Character.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleEnemy.h">
       <Filter>AI\Header</Filter>
     </ClInclude>
   </ItemGroup>
