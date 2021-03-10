@@ -76,10 +76,10 @@ void SimpleEnemy::update(float deltaTime)
 	switch (x)
 	{
 		//default to wander
-	case 1: addBehaviour();
+	case 1: addBehaviour(m_wander);
 
 		//If the target is in sight, seek.
-	case 2: SEEK;
+	case 2: addBehaviour(m_seek);
 	}
 
 	//The switch should transition to the seek state if the target is in sight.
