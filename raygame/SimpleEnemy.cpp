@@ -33,9 +33,7 @@ void SimpleEnemy::onCollision(Character* other)
 	{
 		//If the enemy has run into the player, deal damage to the player
 		other->takeDamage(1);
-
 	}
-
 	//If the player health is less than 0, set the target to be nullptr
 	if (other->getHealth() <= 0)
 	{
