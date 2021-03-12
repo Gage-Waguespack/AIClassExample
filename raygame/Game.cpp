@@ -38,12 +38,12 @@ void Game::start()
 	Agent* enemy = new Agent(15, 15, 1, "Images/enemy.png", 1, 1);
 
 	//Create a new steering behaviour and add it to the enemy
-	WanderBehaviour* wander = new WanderBehaviour(player);
+	WanderBehaviour* wander = new WanderBehaviour(player, 1);
 	SeekBehaviour* seek = new SeekBehaviour(player);
 	FleeBehaviour* flee = new FleeBehaviour(player);
 
 	enemy->addBehaviour(wander);
-	enemy->addBehaviour(flee);
+	//enemy->addBehaviour(flee);
 
 	//Initialize the scene
 	Scene* scene = new Scene();
