@@ -24,6 +24,20 @@ void Player::update(float deltatime)
         Game::getCurrentScene()->addActor(new Bullet(
             getWorldPosition().x, getWorldPosition().y, 2, "Images/bullet.png", 5, getForward() * 5));
 
+    //Checks if the player goes outside the bounds of the screen.
+    //If so the enemy is teleported to the other side
+    if (getWorldPosition().x > Game::getScreenWidth() / 32)
+        setWorldPostion(MathLibrary::Vector2(0, getWorldPosition().y));
+
+    if (getWorldPosition().x < 0)
+        setWorldPostion(MathLibrary::Vector2(Game::getScreenWidth() / 32, getWorldPosition().y));
+
+    if (getWorldPosition().y > Game::getScreenWidth() / 32)
+        setWorldPostion(MathLibrary::Vector2(getWorldPosition().x, 0));
+
+    if (getWorldPosition().y < 0)
+        setWorldPostion(MathLibrary::Vector2(getWorldPosition().x, Game::getScreenHeight() / 32));
+
     Actor::update(deltatime);
 
     if (getHealth() <= 0)

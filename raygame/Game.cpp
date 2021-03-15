@@ -38,7 +38,7 @@ void Game::start()
 
 	//Initialize agents
 	Player* player = new Player(10, 10, 5, "Images/player.png", 1, 10);
-	Agent* enemy = new Agent(15, 15, 1, "Images/enemy.png", 1, 1);
+	Enemy* enemy = new Enemy(15, 15, 1, "Images/enemy.png", player, 1, 1);
 	ComplexEnemy* complexEnemy = new ComplexEnemy(15, 15, 1, "Images/enemy.png", player, 1, 1);
 	PursueDecision* pursueDecision = new PursueDecision();
 	DecisionBehaviour* decisionBehaviour = new DecisionBehaviour(pursueDecision);

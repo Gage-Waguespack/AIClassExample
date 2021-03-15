@@ -81,7 +81,7 @@
       <Filter>AI\Source</Filter>
     </ClCompile>
     <ClCompile Include="PursueDecision.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>AI\Source</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -149,7 +149,7 @@
       <Filter>AI\Header</Filter>
     </ClInclude>
     <ClInclude Include="PursueDecision.h">
-      <Filter>Header Files</Filter>
+      <Filter>AI\Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
