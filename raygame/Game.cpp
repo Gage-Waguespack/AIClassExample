@@ -6,6 +6,7 @@
 #include "FleeBehaviour.h"
 #include "WanderBehaviour.h"
 #include "DecisionBehaviour.h"
+#include "PursueBehaviour.h"
 #include "PursueDecision.h"
 #include "ComplexEnemy.h"
 
@@ -38,7 +39,7 @@ void Game::start()
 
 	//Initialize agents
 	Player* player = new Player(10, 10, 5, "Images/player.png", 1, 10);
-	Enemy* enemy = new Enemy(15, 15, 1, "Images/enemy.png", player, 1, 1);
+	Enemy* enemy = new Enemy(15, 15, 1, "Images/enemy.png", player, 10, 10);
 	ComplexEnemy* complexEnemy = new ComplexEnemy(15, 15, 1, "Images/enemy.png", player, 1, 1);
 	PursueDecision* pursueDecision = new PursueDecision();
 	DecisionBehaviour* decisionBehaviour = new DecisionBehaviour(pursueDecision);
@@ -48,9 +49,10 @@ void Game::start()
 	//Create a new steering behaviour and add it to the enemy
 	WanderBehaviour* wander = new WanderBehaviour(player, 1);
 	SeekBehaviour* seek = new SeekBehaviour(player);
+	PursueBehaviour* pursue = new PursueBehaviour(player, 10);
 	FleeBehaviour* flee = new FleeBehaviour(player);
 
-	enemy->addBehaviour(wander);
+	enemy->addBehaviour(pursue);
 	//enemy->addBehaviour(flee);
 
 	//Initialize the scene

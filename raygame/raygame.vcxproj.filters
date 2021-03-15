@@ -12,14 +12,26 @@
     <Filter Include="Textures">
       <UniqueIdentifier>{b5a36503-1ac1-44c6-bd0b-b12682cdd3b9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI">
+    <Filter Include="AI Assessment">
       <UniqueIdentifier>{2bfaccd1-736f-4d68-8d70-edb22ca5ab0b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI\Source">
+    <Filter Include="AI Assessment\Decisions %28.h files%29">
+      <UniqueIdentifier>{234df0a6-3dcf-4c25-b966-986d2105100e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI Assessment\Decisions %28.cpp files%29">
+      <UniqueIdentifier>{6cbad598-691e-45be-9597-7356b5a7da41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI Assessment\Header files">
+      <UniqueIdentifier>{36dcbe88-3a1c-42b0-82d3-4f1369b5f74c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI Assessment\Source files">
       <UniqueIdentifier>{19205fa2-e1ba-43f8-8fa0-ce75a8ae4d5d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI\Header">
-      <UniqueIdentifier>{36dcbe88-3a1c-42b0-82d3-4f1369b5f74c}</UniqueIdentifier>
+    <Filter Include="AI Assessment\Behaviours %28.h files%29">
+      <UniqueIdentifier>{b75a815e-8379-4f49-a63f-54976b5f7a09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI Assessment\Behaviours %28.cpp files%29">
+      <UniqueIdentifier>{edc9407b-4bc6-4d17-aecb-0f10c7efa24a}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -44,56 +56,56 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SeekBehaviour.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
     <ClCompile Include="Agent.cpp">
-      <Filter>AI\Source</Filter>
+      <Filter>AI Assessment\Source files</Filter>
     </ClCompile>
     <ClCompile Include="Enemy.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="FleeBehaviour.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderBehaviour.cpp">
-      <Filter>AI\Source</Filter>
+      <Filter>AI Assessment\Source files</Filter>
     </ClCompile>
     <ClCompile Include="Character.cpp">
-      <Filter>AI\Source</Filter>
+      <Filter>AI Assessment\Source files</Filter>
     </ClCompile>
     <ClCompile Include="SimpleEnemy.cpp">
-      <Filter>AI\Source</Filter>
+      <Filter>AI Assessment\Source files</Filter>
     </ClCompile>
     <ClCompile Include="ComplexEnemy.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="ABDecision.cpp">
-      <Filter>AI\Source</Filter>
+      <Filter>AI Assessment\Source files</Filter>
     </ClCompile>
     <ClCompile Include="DecisionBehaviour.cpp">
-      <Filter>AI\Source</Filter>
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
     </ClCompile>
-    <ClCompile Include="EvadeBehaviour.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="PursueBehaviour.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="PursueDecision.cpp">
-      <Filter>AI\Source</Filter>
-    </ClCompile>
-    <ClCompile Include="LowHealth.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="SeePlayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WanderDecision.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="ABDecision.cpp">
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
     </ClCompile>
     <ClCompile Include="EvadeDecision.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="PursueDecision.cpp">
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderDecision.cpp">
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="LowHealth.cpp">
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="SeePlayer.cpp">
+      <Filter>AI Assessment\Decisions %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="WanderBehaviour.cpp">
+      <Filter>AI Assessment\Behaviours %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="SeekBehaviour.cpp">
+      <Filter>AI Assessment\Behaviours %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="PursueBehaviour.cpp">
+      <Filter>AI Assessment\Behaviours %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="EvadeBehaviour.cpp">
+      <Filter>AI Assessment\Behaviours %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="FleeBehaviour.cpp">
+      <Filter>AI Assessment\Behaviours %28.cpp files%29</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,64 +128,64 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Agent.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Behaviour.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="SeekBehaviour.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="SteeringBehaviour.h">
-      <Filter>AI\Header</Filter>
+      <Filter>AI Assessment\Header files</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="FleeBehaviour.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderBehaviour.h">
-      <Filter>AI\Header</Filter>
+      <Filter>AI Assessment\Header files</Filter>
     </ClInclude>
     <ClInclude Include="Character.h">
-      <Filter>AI\Header</Filter>
+      <Filter>AI Assessment\Header files</Filter>
     </ClInclude>
     <ClInclude Include="SimpleEnemy.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="Decision.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="ABDecision.h">
-      <Filter>AI\Header</Filter>
+      <Filter>AI Assessment\Header files</Filter>
     </ClInclude>
     <ClInclude Include="ComplexEnemy.h">
-      <Filter>AI\Header</Filter>
+      <Filter>AI Assessment\Header files</Filter>
+    </ClInclude>
+    <ClInclude Include="ABDecision.h">
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
     </ClInclude>
     <ClInclude Include="DecisionBehaviour.h">
-      <Filter>AI\Header</Filter>
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
     </ClInclude>
-    <ClInclude Include="EvadeBehaviour.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="PursueBehaviour.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="PursueDecision.h">
-      <Filter>AI\Header</Filter>
-    </ClInclude>
-    <ClInclude Include="LowHealth.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SeePlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="WanderDecision.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Decision.h">
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
     </ClInclude>
     <ClInclude Include="EvadeDecision.h">
-      <Filter>Header Files</Filter>
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="PursueDecision.h">
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderDecision.h">
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="LowHealth.h">
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="SeePlayer.h">
+      <Filter>AI Assessment\Decisions %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="WanderBehaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="SeekBehaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="PursueBehaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="EvadeBehaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="FleeBehaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Behaviour.h">
+      <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
