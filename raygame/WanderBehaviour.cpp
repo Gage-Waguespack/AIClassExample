@@ -10,35 +10,8 @@ WanderBehaviour::WanderBehaviour()
 
 WanderBehaviour::WanderBehaviour(Agent* agent, float circleRadius)
 {
-	//I need to first think of a radius to get the "circle" at 0,0 (world position).
-	//Then pick a number between 0 and the radius of the circle for the x and y 
-	//to create a vector and normalize it. After this I need to find a point (higher
-	//on the y axis) infront of the player and add the world positions of both circles
-	//together to get the vector we want to head to.
-
 	m_circleRadius = circleRadius;
 	m_target = agent;
-
-	//Create circle
-	
-	//Created a rendom point
-
-	//Calculate the new circle center as it is in WorldPosition
-	
-	//I want to seek the randPoint next BEFORE ANYTHING ELSE
-
-	//Calculate the displacement force
-
-	//Randomly change the vector direction 
-	//by making it change its current angle
-
-
-	//Change wanderAngle just a bit, so it won't
-	//have the same value in the next game frame
-
-
-	//Finally calculate and return the wander force
-
 }
 
 //forward * preferred distance
@@ -53,21 +26,21 @@ void WanderBehaviour::setAngle()
 
 MathLibrary::Vector2 WanderBehaviour::calculateForce(Agent* agent)
 {
-	//Creating a random x and y
-	float x = rand() ;
-	float y = rand();
-	//Find circle center of offset circle
-	agent->getWorldPosition() + MathLibrary::Vector2(0, 5);
-	//Created a rendom point
-	MathLibrary::Vector2 randPoint = MathLibrary::Vector2(cos((double)rand()), sin((double)rand()));
-	//Find the direction to move in
-	MathLibrary::Vector2 direction = MathLibrary::Vector2::normalize(randPoint - agent->getWorldPosition());
-	//Scale the direction vector by the seekForce
-	MathLibrary::Vector2 desiredVelocity = direction * getForceScale();
-	//Subtract current velocity from desired velocity to find steering force
-	MathLibrary::Vector2 wanderForce = desiredVelocity - agent->getVelocity();
+	//Initalize variables to help with calculating wander
+	float circleDistance = 3;
+	float circleRadius = 6;
+	float wanderAngle = 20;
 
-	return wanderForce;
+	//Calculating the circles center
+	MathLibrary::Vector2 circleCenter = agent->getForward() * circleDistance;
+	//Calculating the wanderAngle to make the change per frame as dramatic as possible
+	wanderAngle += (wanderAngle * rand()) - (wanderAngle * 100.0f);
+	//Calculating the direction at which the agent will head when wandering
+	MathLibrary::Vector2 direction = MathLibrary::Vector2(cos(wanderAngle), sin(wanderAngle));
+	//math to calculate WanderForce that the agent will head towards.
+	MathLibrary::Vector2 WanderForce = circleCenter + (direction * circleRadius);
+
+	return WanderForce;
 }
 
 void WanderBehaviour::update(Agent* agent, float deltatime)

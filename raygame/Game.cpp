@@ -5,6 +5,9 @@
 #include "SeekBehaviour.h"
 #include "FleeBehaviour.h"
 #include "WanderBehaviour.h"
+#include "DecisionBehaviour.h"
+#include "PursueDecision.h"
+#include "ComplexEnemy.h"
 
 bool Game::m_gameOver = false;
 Scene** Game::m_scenes = new Scene*;
@@ -36,6 +39,11 @@ void Game::start()
 	//Initialize agents
 	Player* player = new Player(10, 10, 5, "Images/player.png", 1, 10);
 	Agent* enemy = new Agent(15, 15, 1, "Images/enemy.png", 1, 1);
+	ComplexEnemy* complexEnemy = new ComplexEnemy(15, 15, 1, "Images/enemy.png", player, 1, 1);
+	PursueDecision* pursueDecision = new PursueDecision();
+	DecisionBehaviour* decisionBehaviour = new DecisionBehaviour(pursueDecision);
+
+	complexEnemy->addBehaviour(decisionBehaviour);
 
 	//Create a new steering behaviour and add it to the enemy
 	WanderBehaviour* wander = new WanderBehaviour(player, 1);

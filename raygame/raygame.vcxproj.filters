@@ -65,6 +65,24 @@
     <ClCompile Include="SimpleEnemy.cpp">
       <Filter>AI\Source</Filter>
     </ClCompile>
+    <ClCompile Include="ComplexEnemy.cpp">
+      <Filter>AI\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="ABDecision.cpp">
+      <Filter>AI\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="DecisionBehaviour.cpp">
+      <Filter>AI\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="EvadeBehaviour.cpp">
+      <Filter>AI\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PursueBehaviour.cpp">
+      <Filter>AI\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="PursueDecision.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -111,6 +129,27 @@
     </ClInclude>
     <ClInclude Include="SimpleEnemy.h">
       <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="Decision.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ABDecision.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="ComplexEnemy.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="DecisionBehaviour.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="EvadeBehaviour.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PursueBehaviour.h">
+      <Filter>AI\Header</Filter>
+    </ClInclude>
+    <ClInclude Include="PursueDecision.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
