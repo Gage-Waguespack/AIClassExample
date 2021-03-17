@@ -12,7 +12,7 @@ public:
 	void update(float deltaTime) override;
 
 	void BFS(int startX, int startY, int goalX, int goalY);
-	void dijkstrap();
+	void dijkstrap(int startX, int startY, int goalX, int goalY);
 	Node* getNode(int xPos, int yPos);
 
 private:

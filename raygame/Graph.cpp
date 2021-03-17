@@ -87,48 +87,77 @@ void Graph::BFS(int startX, int startY, int goalX, int goalY)
 	}
 }
 
-void Graph::dijkstrap()
+void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 {
 	//Create a node pointer that points to the start node
+	Node* start = getNode(startX, startY);
 	//Create a node pointer that points to the goal node
+	Node* goal = getNode(goalX, goalY);
 
 	//Check if the start or the goal pointer is null
+	if (!start || !goal)
+	{
 		//return an empty list
-	//end if statement
+		return;
+		//end if statement
+	}
 
 	//Set the start nodes color to be green
+	start->color = ColorToInt(GREEN);
 
 	//Create a node pointer that will be act as an iterator for the graph
+	Node* currentNode;
 	//Create an open list
+	std::deque<Node*> openList;
 	//Create a closed list
+	std::deque<Node*> closedList;
 
 	//Add start to the open list
+	openList.push_front(start);
 
 	//Loop while the open list is not empty
-
-		//Sort the items in the open list by the g score
+	while (!openList.empty())
+	{
+		//Sort the items in the open list by the g score [DONT FORGET TO DO THIS ONE BEFORE TESTING!!!]
 
 		//Set the iterator to be the first item in the open list
+		currentNode = openList[0];
 
 		//Check if the iterator is pointing to the goal node
-
+		if (currentNode == goal)
+		{
 			//Mark the goal as being found by changing its color
+			currentNode->color = ColorToInt(YELLOW);
 			//Return the new path found
+			return;
 
-		//end if statement
+			//end if statement
+		}
 
 		//Pop the first item off the open list
+		openList.pop_front();
 		//Add the first item to the closed list
 
 		//Loop through all of the edges for the iterator
-
+		for (int i = 0; i < currentNode->edges.size(); i++)
+		{
 			//Create a node pointer to store the other end of the edge
+			Node* currentEdgeEnd = nullptr;
 
 			//Check if the iterator is on the second end of the node
+			if (currentNode == currentNode->edges[i]->connectedNode2)
+			{
 				//Set the edge end pointer to be the first end of the node
+				currentEdgeEnd = currentNode->edges[i]->connectedNode1;
+			}
 			//Otherwise if the iterator is on the first end of the node...
+			else
+			{
 				//set the edge end pointer to be the second end of the node
-			// end if statement
+				currentEdgeEnd = currentNode->edges[i]->connectedNode2;
+
+				// end if statement
+			}
 
 			//Check if node at the end of the edge is in the closed list
 
@@ -149,8 +178,10 @@ void Graph::dijkstrap()
 					//Set its previous to be the current node
 
 				//end if statement
+		}
 		//end loop
 	//end loop
+	}
 }
 
 Node* Graph::getNode(int xPos, int yPos)
