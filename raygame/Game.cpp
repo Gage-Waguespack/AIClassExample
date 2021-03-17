@@ -63,6 +63,9 @@ void Game::start()
 	//PATHFINDING SCENE START
 
 	Graph* graph = new Graph(5, 5, 5, 1);
+	graph->setWorldPostion({ 15,15 });
+
+	graph->BFS(0, 0, 4, 0);
 
 	Scene* pathFinding = new Scene();
 	pathFinding->addActor(graph);
