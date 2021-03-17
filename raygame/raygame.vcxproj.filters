@@ -33,6 +33,9 @@
     <Filter Include="AI Assessment\Behaviours %28.cpp files%29">
       <UniqueIdentifier>{edc9407b-4bc6-4d17-aecb-0f10c7efa24a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AI Assessment\NewFilter1">
+      <UniqueIdentifier>{65b5849e-f2ab-48d0-ba34-7ecaaa76f332}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -106,6 +109,15 @@
     </ClCompile>
     <ClCompile Include="FleeBehaviour.cpp">
       <Filter>AI Assessment\Behaviours %28.cpp files%29</Filter>
+    </ClCompile>
+    <ClCompile Include="Edge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Graph.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -186,6 +198,15 @@
     </ClInclude>
     <ClInclude Include="Behaviour.h">
       <Filter>AI Assessment\Behaviours %28.h files%29</Filter>
+    </ClInclude>
+    <ClInclude Include="Edge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Graph.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
