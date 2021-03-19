@@ -14,6 +14,7 @@ public:
 
 	void BFS(int startX, int startY, int goalX, int goalY);
 	void dijkstrap(int startX, int startY, int goalX, int goalY);
+	void aStar(int startX, int startY, int goalX, int goalY);
 	void bubbleSort(std::deque<Node*> node);
 	Node* getNode(int xPos, int yPos);
 
