@@ -160,24 +160,25 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 				// end if statement
 			}
 
-			//Check if node at the end of the edge is in the closed list
+			//Check if node at the end of the edge is in the closed list  WHAT DO?!
 			if (currentEdgeEnd)
 			{
 
 				//Create a float and set it to be the g score of the iterator plus the cost of the edge
-
+				float gScore = 0;
 
 				//Check if the node at the end of the edge is in the open list
-
-
+				if (currentEdgeEnd)
+				{
 					//Mark the node as visited by changing its color
+					currentEdgeEnd->color = ColorToInt(RED);
 
 					//Set the nodes g score to be the g score calculated earlier
 
 					//Set the nodes previous to be the iterator
 
 					//Add the node to the open list
-
+				}
 
 				//Otherwise if the g score is less than the node at the end of the edge's g score...
 
