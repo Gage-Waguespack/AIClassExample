@@ -1,6 +1,7 @@
 #pragma once
 #include "Actor.h"
 #include <vector>
+#include <deque>
 
 class Node;
 
@@ -13,6 +14,7 @@ public:
 
 	void BFS(int startX, int startY, int goalX, int goalY);
 	void dijkstrap(int startX, int startY, int goalX, int goalY);
+	void bubbleSort(std::deque<Node*> node);
 	Node* getNode(int xPos, int yPos);
 
 private:

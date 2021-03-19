@@ -2,7 +2,6 @@
 #include "Node.h"
 #include "Edge.h"
 #include<raylib.h>
-#include <deque>
 
 Graph::Graph(int width, int height, int nodeSize, int nodeSpacing)
 {
@@ -120,6 +119,7 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 	{
 		//Sort the items in the open list by the g score [DONT FORGET TO DO THIS ONE BEFORE TESTING!!!]
 
+
 		//Set the iterator to be the first item in the open list
 		currentNode = openList[0];
 
@@ -137,6 +137,7 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 		//Pop the first item off the open list
 		openList.pop_front();
 		//Add the first item to the closed list
+		closedList.pop_front();
 
 		//Loop through all of the edges for the iterator
 		for (int i = 0; i < currentNode->edges.size(); i++)
@@ -160,27 +161,54 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 			}
 
 			//Check if node at the end of the edge is in the closed list
+			if (currentEdgeEnd)
+			{
 
-				//Create an int and set it to be the g score of the iterator plus the cost of the edge
+				//Create a float and set it to be the g score of the iterator plus the cost of the edge
 
 
 				//Check if the node at the end ofthe edge is in the open list
 
+
 					//Mark the node as visited by changing its color
+
 					//Set the nodes g score to be the g score calculated earlier
+
 					//Set the nodes previous to be the iterator
+
 					//Add the node to the open list
+
 
 				//Otherwise if the g score is less than the node at the end of the edge's g score...
 
 					//Mark the node as visited by changing its color
+					currentEdgeEnd->color = ColorToInt(RED);
 					//Set its g score to be the g score calculated earlier
+
 					//Set its previous to be the current node
 
+
 				//end if statement
+			}
 		}
 		//end loop
 	//end loop
+	}
+}
+
+void Graph::bubbleSort(std::deque<Node*> node)
+{
+	for (int i = 0; i < node.size; i++)
+	{
+		for (int j = node.size - 1; j > i; j--)
+		{
+			if (node[j] < node[j - 1])
+			{
+				Node* temp = node[j];
+				node[j] = node[j - 1];
+				node[j - 1] = temp;
+			}
+		}
 	}
 }
 
