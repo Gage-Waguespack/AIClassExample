@@ -54,7 +54,7 @@ void Game::start()
 	PursueBehaviour* pursue = new PursueBehaviour(player, 10);
 	FleeBehaviour* flee = new FleeBehaviour(player);
 
-	enemy->addBehaviour(pursue);
+	complexEnemy->addBehaviour(pursue);
 	//enemy->addBehaviour(flee);
 
 	//STEERING BEHAVIOUR SCENE END
@@ -63,7 +63,7 @@ void Game::start()
 	//PATHFINDING SCENE START
 
 	Graph* graph = new Graph(32, 24, 5, 1);
-	graph->setWorldPostion({ .5f,.5f });
+	graph->setWorldPostion({ .5f,.4f });
 
 	graph->BFS(0, 0, 31, 23);
 
