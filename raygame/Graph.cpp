@@ -204,17 +204,27 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 void Graph::aStar(int startX, int startY, int goalX, int goalY)
 {
 	//Create a node pointer that points to the start node
+	Node* start = getNode(startX, startY);
 	//Create a node pointer that points to the goal node
+	Node* goal = getNode(goalX, goalY);
 
 	//Check if the start or the goal pointer is null
+	if (!start || !goal)
+	{
 		//return an empty list
-	//end if statement
+		return;
+		//end if statement
+	}
 
 	//Set the start nodes color to be green
+	start->color = ColorToInt(GREEN);
 
-	//Create a node pointer that will act as an iterator for the graph
+	//Create a node pointer that will be act as an iterator for the graph
+	Node* currentNode;
 	//Create an open list
+	std::deque<Node*> openList;
 	//Create a closed list
+	std::deque<Node*> closedList;
 
 	//Add start to the open list
 
@@ -232,7 +242,9 @@ void Graph::aStar(int startX, int startY, int goalX, int goalY)
 		//end if statement
 
 		//Pop the first item off the open list
+		openList.pop_front();
 		//Add the first item to the closed list
+		closedList.pop_front();
 
 		//Loop through all of the edges for the iterator
 
