@@ -33,9 +33,6 @@
     <Filter Include="AI Assessment\Behaviours %28.cpp files%29">
       <UniqueIdentifier>{edc9407b-4bc6-4d17-aecb-0f10c7efa24a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AI Assessment\NewFilter1">
-      <UniqueIdentifier>{65b5849e-f2ab-48d0-ba34-7ecaaa76f332}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
