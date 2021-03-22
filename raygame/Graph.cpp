@@ -25,6 +25,17 @@ void Graph::update(float deltaTime)
 		m_nodes[i]->update(deltaTime);
 }
 
+Node* Graph::checkList(std::deque<Node*> list, Node* lookingFor)
+{
+	for (int i = 0; i < list.size(); i++)
+	{
+		if (list[i] = lookingFor)
+		{
+			return lookingFor;
+		}
+	}
+}
+
 void Graph::BFS(int startX, int startY, int goalX, int goalY)
 {
 	//Get a referance to the start and end nodes
@@ -103,6 +114,7 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 
 	//Set the start nodes color to be green
 	start->color = ColorToInt(GREEN);
+	start->gScore = 0;
 
 	//Create a node pointer that will be act as an iterator for the graph
 	Node* currentNode;
@@ -161,12 +173,11 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 			}
 
 			//Check if node at the end of the edge is in the closed list | WHAT DO I DO?! |
-			if (currentEdgeEnd) 
+			if (checkList(closedList, currentEdgeEnd)) 
 			{
 
 				//Create a float and set it to be the g score of the iterator plus the cost of the edge
-				float gScore = 0;
-				gScore = 1.0f;
+				currentNode->gScore + currentNode->edges[i]->cost;
 
 				//Check if the node at the end of the edge is in the open list
 				if (currentEdgeEnd)
@@ -175,22 +186,26 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 					currentEdgeEnd->color = ColorToInt(RED);
 
 					//Set the nodes g score to be the g score calculated earlier
-
-
+					currentEdgeEnd = currentNode;
+					
 					//Set the nodes previous to be the iterator
-
+					currentEdgeEnd/*.previous*/ = currentNode;
 
 					//Add the node to the open list
+
 
 				}
 
 				//Otherwise if the g score is less than the node at the end of the edge's g score...
 
+
 					//Mark the node as visited by changing its color
 					currentEdgeEnd->color = ColorToInt(RED);
 					//Set its g score to be the g score calculated earlier
 
+
 					//Set its previous to be the current node
+
 
 
 				//end if statement
@@ -238,7 +253,7 @@ void Graph::aStar(int startX, int startY, int goalX, int goalY)
 
 			//Mark the goal as being found by changing its color
 			//Return the new path found
-
+	
 		//end if statement
 
 		//Pop the first item off the open list
