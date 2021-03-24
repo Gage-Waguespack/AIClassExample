@@ -36,6 +36,20 @@ Node* Graph::checkList(std::deque<Node*> list, Node* lookingFor)
 	}
 }
 
+Node* Graph::getItem(std::deque<Node*> list, int slotNum)
+{
+	Node* itemPos = 0;
+	for (int i = slotNum; i < list.size(); i++)
+	{
+		if (list[i] = itemPos)
+		{
+			return itemPos;
+		}
+		else
+		return nullptr;
+	}
+}
+
 void Graph::BFS(int startX, int startY, int goalX, int goalY)
 {
 	//Get a referance to the start and end nodes
@@ -145,11 +159,13 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 
 			//end if statement
 		}
+		Node* currentItem;
 
 		//Pop the first item off the open list
+		currentItem = getItem(openList, 1);
 		openList.pop_front();
 		//Add the first item to the closed list
-		closedList.pop_front();
+		closedList.push_front(currentItem);
 
 		//Loop through all of the edges for the iterator
 		for (int i = 0; i < currentNode->edges.size(); i++)
@@ -177,38 +193,41 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 			{
 
 				//Create a float and set it to be the g score of the iterator plus the cost of the edge
-				currentNode->gScore + currentNode->edges[i]->cost;
+				float currentGScore = currentNode->gScore + currentNode->edges[i]->cost;
 
 				//Check if the node at the end of the edge is in the open list
-				if (currentEdgeEnd)
+				if (checkList(openList, currentEdgeEnd))
 				{
 					//Mark the node as visited by changing its color
 					currentEdgeEnd->color = ColorToInt(RED);
 
 					//Set the nodes g score to be the g score calculated earlier
-					currentEdgeEnd = currentNode;
+					currentEdgeEnd->gScore = currentGScore;
 					
 					//Set the nodes previous to be the iterator
-					currentEdgeEnd/*.previous*/ = currentNode;
+					currentEdgeEnd->edges[i]->connectedNode1 = currentEdgeEnd;
 
 					//Add the node to the open list
-
+					openList.push_back(currentEdgeEnd);
 
 				}
 
 				//Otherwise if the g score is less than the node at the end of the edge's g score...
-
-
+				else
+				{
 					//Mark the node as visited by changing its color
 					currentEdgeEnd->color = ColorToInt(RED);
-					//Set its g score to be the g score calculated earlier
+					currentEdgeEnd->visited;
 
+					//Set its g score to be the g score calculated earlier
+					currentEdgeEnd->gScore = currentGScore;
 
 					//Set its previous to be the current node
-
+					currentEdgeEnd->edges[i]->connectedNode1 = currentNode;
 
 
 				//end if statement
+				}
 			}
 		}
 		//end loop

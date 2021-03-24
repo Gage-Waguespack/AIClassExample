@@ -13,6 +13,7 @@ public:
 	void update(float deltaTime) override;
 
 	Node* checkList(std::deque<Node*> list, Node* lookingFor);
+	Node* getItem(std::deque<Node*> list, int slotNum);
 	void BFS(int startX, int startY, int goalX, int goalY);
 	void dijkstrap(int startX, int startY, int goalX, int goalY);
 	void aStar(int startX, int startY, int goalX, int goalY);
