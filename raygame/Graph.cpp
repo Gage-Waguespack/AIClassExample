@@ -162,8 +162,8 @@ void Graph::dijkstrap(int startX, int startY, int goalX, int goalY)
 		Node* currentItem;
 
 		//Pop the first item off the open list
-		currentItem = getItem(openList, 1);
 		openList.pop_front();
+		
 		//Add the first item to the closed list
 		closedList.push_front(currentItem);
 
